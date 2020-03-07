@@ -20,8 +20,8 @@ export class Weather extends Component {
 
     this.state = {
       selectedCity: {
-        "name": "Toronto",
-      "code": "CAON0103"
+        name: "Toronto",
+        code: "CAON0103"
       },
       isCelsius: true
     };
@@ -44,7 +44,7 @@ export class Weather extends Component {
   handleToggleTemperatureUnit() {
     const isCelsius = !this.state.isCelsius;
     this.props.fetchWeather(
-      this.state.selectedCity,
+      this.state.selectedCity.code,
       isCelsius ? "C" : "F",
       () => {
         this.setState({ isCelsius: isCelsius });
@@ -60,13 +60,24 @@ export class Weather extends Component {
       <React.Fragment>
         {error && <Alert message={error} />}
         <div className="row pt-3 pb-3 mt-3 mb-3">
-          <div className="col-6 col-md-4 offset-md-2 col-lg-3 offset-lg-3 text-right">{`Please choose city: `}</div>
+          <div className="col-6 col-md-4 offset-md-2 col-lg-3 offset-lg-3">
+            <div className="input-group">
+              <div className="input-group-prepend mr-3">City:</div>
+              <CityDropdown
+                cities={cities}
+                currentCity={selectedCity}
+                handleChange={this.handleCityChanged}
+              />
+            </div>
+          </div>
           <div className="col-6">
-            <CityDropdown
-              cities={cities}
-              currentCity={selectedCity}
-              handleChange={this.handleCityChanged}
-            />
+            <div className="input-group">
+              <div className="input-group-prepend mr-3">C/F:</div>
+              <TemperatureUnitToggle
+                isCelsius={this.state.isCelsius}
+                handleToggle={() => this.handleToggleTemperatureUnit()}
+              />
+            </div>
           </div>
         </div>
 
@@ -106,15 +117,6 @@ export class Weather extends Component {
             <Temperature
               temperature={weather ? weather.feels_like : undefined}
               isCelsius={isCelsius}
-            />
-          </div>
-        </div>
-        <div className="row pb-3 mb-3">
-          <div className="col-6  col-md-4 offset-md-2 col-lg-3 offset-lg-3">{`Temperature unit:`}</div>
-          <div className="col-6">
-            <TemperatureUnitToggle
-              isCelsius={this.state.isCelsius}
-              handleToggle={() => this.handleToggleTemperatureUnit()}
             />
           </div>
         </div>
