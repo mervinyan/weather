@@ -20,9 +20,9 @@ There are two layers: routes and controllers. Routes to forward the supported re
 ### unit testing
 Unit testings are done with chai, chai-http and mocha. 
 
-### commands
+### how to run/test
 * Test: npm test
-* Start: node index.js
+* Start: npm start
 
 ## app project
 
@@ -79,6 +79,10 @@ React Hooks is a new coll feature. It will make code more concise and readable. 
 Unit testing are being done on actions, reducers and components. MockAxios and configureMockStore from redux-mock-store being used in order to mock axios and redux store. All test files are located the same folder where the action/reducer/component being tested. They can be moved to a central folder named "__test__" if preferred.
 Enzyme being used for testing components instead of using the react-testing library. No particular reason to not use the react-testing, I am just more familar with Enzyme. 
 For Gallery and Weather, the named compoment not the default export being tested as we want to unit testing the component itself not the redux part.
+
+### how to run/test
+* Test: npm test
+* Start: npm start
 
 ## docker config
 
