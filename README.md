@@ -99,18 +99,18 @@ In production environment normally Nginx will be used as http and reverse proxy 
 * create a simple expressjs app (named as server, for example)
 * copy the build folder from app to server
 * add the following code to redirect request
-{code}
+```javascript
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-{code} 
+```
 * run following command to start server
-{code}
+```
 pm2 start ./bin/www --name weather-app -i max
-{code}
+```
 
 ### nginx config
-{code}
+```
 server {
     listen 80;
     server_name WEATHER_APP_DOMAIN;
@@ -124,7 +124,7 @@ server {
         proxy_redirect off;
      }
 }
-{code}
+```
 
 ## docker config
 
