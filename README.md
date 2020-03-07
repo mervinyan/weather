@@ -49,6 +49,9 @@ Current implementation is developed with es6 (es2005). It can be ported to types
 ### typechecking
 There is no typechecking in current implementation but it can be done eaily by adding propTypes and defaultProps to components.
 
+### internationaliztion (multi-language support )
+Currently the weather app supports English only. Another language like French can be supported in the future. There are plenty of third-party open souce nodejs/react libraries which can be used to implement the internationalization for weather app, react-intl, react-localize-redux, just name a few. 
+
 ### weather icons
 Weather icons are being wrapped into a function component named ConditionIcon which takes wxcondition from the weathernetwork api response and try to find the "best matched" icons by checking the wxcondition against list of supported conditions. Current implementation is quite dummy, better algorithm can be determined and implemented in the future if required.
 
