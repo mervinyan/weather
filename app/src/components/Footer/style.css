@@ -1,0 +1,19 @@
+.footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #181818;
+}
+
+.footer, .footer a {
+  color: #fff;
+}
+
+.foot-address {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.copyright {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

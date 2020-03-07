@@ -1,0 +1,5 @@
+{
+  "port": 3000,
+  "photo_location": "./photos/",
+  "upload_location": "./uploads/"
+}

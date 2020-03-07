@@ -1,0 +1,27 @@
+version: "2"
+services:
+  app:
+    image: weather-app
+    restart: always
+    ports: 
+      - "3001:3001"
+    volumes: 
+      - ./app:/app
+      - /app/node_modules
+    links:
+      - api
+    networks:
+      - webappnetwork
+  api:
+    image: weather-api
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes: 
+      - ./api:/api
+      - /api/node_modules
+    networks:
+      - webappnetwork
+networks:
+  webappnetwork:
+    driver: bridge

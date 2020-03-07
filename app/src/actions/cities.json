@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Toronto",
+    "code": "CAON0103"
+  },
+  {
+    "name": "Montreal",
+    "code": "CAON0423"
+  },
+  {
+    "name": "Ottawa",
+    "code": "CAON0512"
+  },
+  {
+    "name": "Vancouver",
+    "code": "CABC0308"
+  },
+  {
+    "name": "Calgary",
+    "code": "CAAB0049"
+  }
+]

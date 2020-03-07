@@ -1,0 +1,23 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-size: 0.875rem;
+  margin-bottom: 48px;
+}
+
+body > .container {
+  padding: 15px 15px 0;
+}
+
+
+body > .container {
+  padding: 15px 15px 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
