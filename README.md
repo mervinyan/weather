@@ -61,7 +61,7 @@ CORS (Corss-origin resource sharing) issue is a known issue when the app and api
 Weather icons are being wrapped into a function component named ConditionIcon which takes wxcondition from the weathernetwork api response and try to find the "best matched" icons by checking the wxcondition against list of supported conditions. Current implementation is quite dummy, better algorithm can be determined and implemented in the future if required.
 
 ### gallery
-Thumbnail version of images currently is done via hard-coded sizes in styles. Thumbnail version of image (smaller size, e.g. 75 x 75) can be and should be created for each image and stored at the "photo location". 
+Thumbnail version of images currently is done via hard-coded image size in styles. Thumbnail version of image (smaller size, e.g. 75 x 75) can be and should be created for each image and stored at the "photo location". 
 Horizontal slide can be and should be implemented for scrolling thumnail images in order to have slick UI and better user experience.
 Large view of selected image is shown on the same screen. A popup can be implemented.
 
