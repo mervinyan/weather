@@ -1,4 +1,4 @@
-This project contains two components: api, and app. api is a nodejs/expressjs based application it provides restful apis for fetching and uploading photos; app is a spa (single page application) based on reactjs.
+This project contains two components: api, and app. api is a nodejs/expressjs based application it provides restful apis for fetching and uploading photos; app is a reactjs-based spa (single page application) which contains two pages: weather - display current weather condition for a given location and temperature unit, gallery - display beautiful weather photos.
 
 ## api project
 
