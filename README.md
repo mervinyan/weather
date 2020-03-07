@@ -21,8 +21,8 @@ There are two layers: routes and controllers. Routes to forward the supported re
 Unit testings are done with chai, chai-http and mocha. 
 
 ### commands
-Test: npm test
-Start: node index.js
+* Test: npm test
+* Start: node index.js
 
 ## app project
 
@@ -83,27 +83,27 @@ For Gallery and Weather, the named compoment not the default export being tested
 ## docker config
 
 ### docker config files
-api/Dockerfile
-app/Dockerfile
-docker-compose.yml
+* api/Dockerfile
+* app/Dockerfile
+* docker-compose.yml
 
 ### build docker image for api project
-cd api 
-sudo docker build -t weather-api .
+* cd api 
+* sudo docker build -t weather-api .
 
 ### build docker image for app project
-cd app 
-sudo docker build -t weather-app .
+* cd app 
+* sudo docker build -t weather-app .
 
 ### docker compose
-cd ..
-sudo docker-compose up -d --build
+* cd ..
+* sudo docker-compose up -d --build
 
 ### docker images
 docker images can be found in my docker repository on docker hub
 
-api: https://hub.docker.com/repository/docker/myan2350/weather-api
-app: https://hub.docker.com/repository/docker/myan2350/weather-app
+* api: https://hub.docker.com/repository/docker/myan2350/weather-api
+* app: https://hub.docker.com/repository/docker/myan2350/weather-app
 
 
 
