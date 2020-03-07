@@ -88,9 +88,43 @@ Unit testing are being done on actions, reducers and components. MockAxios and c
 Enzyme being used for testing components instead of using the react-testing library. No particular reason to not use the react-testing, I am just more familar with Enzyme. 
 For Gallery and Weather, the named compoment not the default export being tested as we want to unit testing the component itself not the redux part.
 
-### how to run/test
+### how to run/test/build
 * Test: npm test
 * Start: npm start
+* Build: npm run build
+
+### production deployment
+In production environment normally Nginx will be used as http and reverse proxy server. For a react app, the navigation among different pages may work fine if we just click through the links, however we may encounter "can not get /URL" erorr when refreshing a page. It is a known drawback with client-side routing (like react-router). One solution is to create a simple expressjs app which redirect all request to the static build index.html
+
+* create a simple expressjs app (named as server, for example)
+* copy the build folder from app to server
+* add the following code to redirect request
+{code}
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+{code} 
+* run following command to start server
+{code}
+pm2 start ./bin/www --name weather-app -i max
+{code}
+
+### nginx config
+{code}
+server {
+    listen 80;
+    server_name WEATHER_APP_DOMAIN;
+    location / {
+        proxy_pass http://127.0.0.1:3001;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_redirect off;
+     }
+}
+{code}
 
 ## docker config
 
