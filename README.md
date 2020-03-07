@@ -32,7 +32,17 @@ It follows the following patterns: container component, function component, cont
 Seperate of concern princple has been applied in this app: all react components are splitted two types: prensentional and container. 
 
 ### responsive
-Weather app is a responsive single page web application. Responsive design is implemented by using bootstrap 4 library.
+Weather app is a responsive mobile-first single page web application. Responsive design is implemented by using bootstrap 4 library. Material Design is another option which can be used to develop a responsive web app.
+
+### pwa (progressive web app)
+PWA (Progressive Web App) is offline-first, faster and more reliable than traditional web apps, and provide an engaging mobile experience. PWA gains more and more popularity in web development world. Weather app was bootstrapped via create-react-app, which has PWA capaiblity. We need to make the following code in src/index.js file
+```
+serviceWorker.unregister();
+```
+to
+```
+serviceWorker.register();
+```
 
 ### peformance
 The gallery screen will have a lot of images, the peformance of this page has to be concerned. One way to get better performance is to reduce the file size. Beside to decrease the image's quality in order to reduce the image file size, the WebP image are being used. Webp Images are smaller than their JPEG and PNG counterparts - usually on hte magnitude of a 25-35% reduction in filesize. This decreases page sizes and improve performance. Since WebP is not being supported by all browser yet, so picture and source tag being used in order to serve WebP to newer browsers and a fallback image to older browsers.
